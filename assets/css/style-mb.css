@@ -1,0 +1,144 @@
+@media screen and (max-width: 640px) {
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #363636;
+  }
+  body tag {
+    color: #00c5f7;
+  }
+  a {
+    color: #00c5f7;
+  }
+  .img {
+    max-width: 98%;
+    width: 150px;
+    height: 80px;
+  }
+  .live_card {
+    width: 98%;
+    height: 160px;
+    border-radius: 20px;
+  }
+  p {
+    display: none;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  table {
+    margin: 20px auto;
+    height: 80px;
+    border-collapse: separate;
+    border-collapse: 30px 0px;
+  }
+  td {
+    height: 200px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 0 8px gray;
+            box-shadow: 0 0 8px gray;
+    border: solid 1px #8eeeff;
+    background: #fff;
+    padding: 10px;
+  }
+}
+
+.last td:last-child {
+  border-bottom: solid 1px #ccc;
+  width: 98%;
+}
+
+.tbl-r02 {
+  width: 80%;
+}
+
+.tbl-r02 th, .tbl-r02 td {
+  border-bottom: none;
+  display: block;
+}
+
+.c_right {
+  position: fixed;
+  top: 90%;
+  right: 10%;
+  left: 10%;
+}
+
+.cp_navi {
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+  color: #888888;
+  display: block;
+  margin: 1em 1%;
+  overflow: hidden;
+  width: 98%;
+}
+
+.cp_navi ul {
+  margin: 0;
+  padding: 0;
+}
+
+.cp_navi ul li {
+  display: inline-block;
+  list-style-type: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.cp_navi > ul > li > a {
+  color: #aaaaaa;
+  display: block;
+  line-height: 56px;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.cp_navi > ul > li > a > .caret {
+  border-top: 4px solid #aaaaaa;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  vertical-align: middle;
+  -webkit-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+
+.cp_navi > ul > li:hover {
+  background-color: #00aeff;
+}
+
+.cp_navi > ul > li:hover > a {
+  color: white;
+}
+
+.cp_navi > ul > li:hover > a > .caret {
+  border-top-color: white;
+}
+
+.cp_navi > ul > li:hover > div {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.cp_navi > ul > li > div ul > li {
+  display: block;
+}
+
+.cp_navi > ul > li > div ul > li > a {
+  color: #ffffff;
+  display: block;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.cp_navi > ul > li > div ul > li:hover > a {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/*# sourceMappingURL=style-mb.css.map */
