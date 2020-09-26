@@ -13,5 +13,5 @@ Live Streaming Pratform 「CAPSET」
   <li>Glitch @FreePlan</li>
 </ul>
 
-<h3>License</h3>
+<h3>License</h3><br>
 ©︎Copyright CAPSET 2020 / Yutolab1120
