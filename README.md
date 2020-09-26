@@ -14,4 +14,4 @@ Live Streaming Pratform 「CAPSET」
 </ul>
 
 <h3>License</h3>
-©︎CAPSET 2020 / Yutolab1120
+©︎Copyright CAPSET 2020 / Yutolab1120
