@@ -12,3 +12,6 @@ Live Streaming Pratform 「CAPSET」
   <li>Google Cloud Pratform</li>
   <li>Glitch @FreePlan</li>
 </ul>
+
+<h3>License</h3>
+©︎CAPSET 2020 / Yutolab1120
