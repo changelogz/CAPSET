@@ -27,7 +27,7 @@
   }
   /*中央配置"センタリング"*/
   #wrap {
-    width: 960px;
+    width: 840px;
     margin: 0 auto;
     text-align: left;
   }
@@ -38,6 +38,11 @@
   #wrap .right {
     width: 660px;
     float: right;
+  }
+  #wrap iframe {
+    width: 830px;
+    height: 470px;
+    border-radius: 20px;
   }
   /*ライブ配信アクセス用テーブル*/
   table {
