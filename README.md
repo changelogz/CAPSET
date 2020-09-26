@@ -7,3 +7,8 @@ Live Streaming Pratform 「CAPSET」
 <li>PHP</li>
 </ul>
 
+<h3>Hosting</h3>
+<ul>
+  <li>Google Cloud Pratform</li>
+  <li>Glitch @FreePlan</li>
+</ul>
