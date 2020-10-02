@@ -5,7 +5,7 @@ Live Streaming Pratform 「CAPSET」
 <ul>
 <li>HTML&Sass(CSS)</li>
 <li>PHP</li>
-<li>Bootstrap</li>
+<li>Bootstrap(?)</li>
 </ul>
 
 <h3>Hosting</h3>
