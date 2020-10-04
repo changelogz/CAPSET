@@ -2,67 +2,33 @@
 <html lang="ja">
 
 <head>
-    <title>CAPSET</title>
-
-    <!--meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--link tags-->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style-pc.css">
-    <link rel="stylesheet" href="assets/css/style-mb.css">
-
+    <meta charset="utf-8">
+    <title>socket.io chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
+    <form id="message_form" action="#">
+        <input id="input_msg" autocomplete="off" /><button>送信</button>
+    </form>
 
-    <!--Logo images-->
-    <div id="wrap">
-        <a href=""><img class="img"
-                src="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Flogo.png?v=1601057973093"></a>
-    </div>
+    <ul id="messages"></ul>
 
-    <!--button bar-->
-    <div id="wrap">
-        <div class="cp_navi">
-            <ul>
-                <li><a href="">ライブ配信</a></li>
-                <li><a href="live-q/">クエスト投稿</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!--designe title-->
-    <p>互いに<tag>「</tag>楽しい<tag>」</tag>を提供するプラットフォーム</p>
-    <h1>次は<tag>「</tag>あなた<tag>」</tag>が&nbsp;配信者を楽しませる番です。</h1>
-
-    <br>
-
-    <!--live board-->
-    <div id="wrap">
-        <table class="tbl-r02">
-
-            <tr class="last">
-                <td><a href="live/"><img class="live_card"
-                            src="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Fogp-d.png?v=1601057971260"><br>デバッグさえも許されない休日。</a>
-                </td>
-            </tr>
-
-            <tr class="last">
-                <td><a href="live/"><img class="live_card"
-                            src="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Fogp-d.png?v=1601057971260"><br>ライブ配信テスト</a>
-                </td>
-            </tr>
-
-            <tr class="last">
-                <td><a href="live/"><img class="live_card"
-                            src="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Fogp-d.png?v=1601057971260"><br>Hello,
-                        World</a></td>
-            </tr>
-
-        </table>
-    </div>
+    <script>
+        var socketio = io();
+        $(function () {
+            $('#message_form').submit(function () {
+                socketio.emit('message', $('#input_msg').val());
+                $('#input_msg').val('');
+                return false;
+            });
+            socketio.on('message', function (msg) {
+                $('#messages').append($('<li>').text(msg));
+            });
+        });
+    </script>
 
 
 </body>
