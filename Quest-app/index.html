@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quest-app</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <!--クエスト投稿用のinputタグ-->
+    <form id="message_form" action="#">
+        クエスト内容: <input id="input_msg" autocomplete="off" /><br>
+        クエスト詳細: <input id="input_msg_1" autocomplete="off" /><br><br><button>クエストを送信</button>
+    </form>
+    <!--投稿されたクエスト-->
+    <ul id="messages">
+        <h3>クエスト内容</h3>
+    </ul>
+    <ul id="messages_1">
+        <h4>詳細</h4>
+    </ul>
+
+    <!--受け取り/送信の処理-->
+    <script>
+        var socketio = io();
+        $(function () {
+            // 1
+            $('#message_form').submit(function () {
+                socketio.emit('message', $('#input_msg').val());
+                $('#input_msg').val('');
+                return false;
+            });
+            //2
+            $('#message_form').submit(function () {
+                socketio.emit('message_1', $('#input_msg_1').val());
+                $('#input_msg_1').val('');
+                return false;
+            });
+
+            //1
+            socketio.on('message', function (msg) {
+                $('#messages').append($('<p>').text(msg));
+            });
+            //2
+            socketio.on('message_1', function (msg_1) {
+                $('#messages_1').append($('<p>').text(msg_1));
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>
