@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quest-app</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="index.js"></script>
+    <style>
+        #input_msg,
+        #input_msg_1 {
+            width: 500px;
+            height: 40px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+
+        #input_msg:focus,
+        #input_msg_1:focus {
+            border: 2px solid #00ffd0;
+            z-index: 10;
+            outline: 0;
+        }
+
+        button {
+            width: 500px;
+            height: 40px;
+            background: #00e7bd;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+        }
+
+        .box {
+            color: #363636;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--クエスト投稿用のinputタグ-->
+    <form id="message_form" action="#">
+        タイトル<br><input id="input_msg" autocomplete="off" placeholder="クエストタイトル (例:木を切って！) ※必須" /><br><br>
+        概要<br><input id="input_msg_1" autocomplete="off" placeholder="例: 最初は木だよね！" /><br><br><button>クエストを投稿する</button>
+    </form>
+    <!--投稿されたクエスト-->
+    <ul id="messages">
+        <h4>タイトル</h4>
+    </ul>
+    <ul id="messages_1">
+        <h4>概要</h4>
+    </ul>
+
+    <!--受け取り/送信の処理-->
+    <script>
+        var socketio = io();
+        $(function () {
+            // 1i
+            $('#message_form').submit(function () {
+                socketio.emit('message', $('#input_msg').val());
+                $('#input_msg').val('');
+                return false;
+            });
+            //2
+            $('#message_form').submit(function () {
+                socketio.emit('message_1', $('#input_msg_1').val());
+                $('#input_msg_1').val('');
+                return false;
+            });
+
+            //1
+            socketio.on('message', function (msg) {
+                $('#messages').append($('<div class="box"><li><br>').text(msg));
+            });
+            //2
+            socketio.on('message_1', function (msg_1) {
+                $('#messages_1').append($('<p><br>').text(msg_1));
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>
