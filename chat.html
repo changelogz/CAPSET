@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+  
+    <title>socket.io chat-app</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <style>
+      body{
+        background: #fff;
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+        #input_msg {
+            width: 80%;
+            height: 50px;
+            border: 1;
+            border-color: #f8f8f8;
+            z-index: 10;
+            outline: 0;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 18%;
+            height: 56px;
+            border: none;
+            background: rgb(1, 225, 255);
+            color: #fff;
+            border: none
+            z-index: 10;
+            outline: 0;
+            border-radius: 5px;
+        }
+
+        #message_form {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            border:none;
+        }
+      li {
+        font-size: 20px;
+      }
+    </style>
+</head>
+
+<body>
+    <!--チャット投稿用のinputタグ-->
+    <form id="message_form" action="#">
+        <input id="input_msg" autocomplete="off" placeholder="メッセージを送ろう！" /><button>送信</button>
+    </form>
+    <!--投稿されたメッセージ-->
+    <ul id="messages"></ul>
+
+    <!--チャット受け取り/送信の処理-->
+    <script>
+        var socketio = io();
+        $(function () {
+            $('#message_form').submit(function () {
+                socketio.emit('message', $('#input_msg').val());
+                $('#input_msg').val('');
+                return false;
+            });
+            socketio.on('message', function (msg) {
+                $('#messages').append($('<li>').text(msg));
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
