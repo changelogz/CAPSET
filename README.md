@@ -17,7 +17,7 @@ Live Streaming Pratform 「CAPSET」
 <h3>Domain</h3>
 <ul>
   <li>capset.hacklife.work (Onamae.com)</li>
-  <li>capset.glitch.me (Glitch)</li>
+  <li>capset.glitch.me (Glitch.com)</li>
 </ul>
 
 <h3>License</h3><br>
