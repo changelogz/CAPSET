@@ -2,50 +2,79 @@
 <html lang="ja">
 
 <head>
-    <title>CAPSET</title>
-
-    <!--meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        iframe {
+            border-radius: 5px;
+            border: none;
+        }
 
-    <!--link tags-->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style-pc.css">
-    <link rel="stylesheet" href="../assets/css/style-mb.css">
+        body {
+            background: #f8f9fa !important;
+        }
+    </style>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
+    <!--OGP-->
+	    <meta name="twitter:site" content="@Yutolab1120">
+    <meta name="twitter:description" content="互いに「楽しい」を提供するプラットフォーム">
+    <meta name="twitter:title" content="CAPSET">
+    <meta name="twitter:url" content="https://capset.hacklife.work/front/live/">
+    <meta name="twitter:image" content="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Fogp.png?v=1601145218054">
+
+      <meta name="twitter:card" content="summary_large_image">
+
+    <title>CAPSET</title>
 </head>
 
 <body>
 
-    <!--Logo images-->
-    <div id="wrap">
-        <a href="/"><img class="img" src="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Flogo.png?v=1601057973093"></a>
-    </div>
+    <div class="container">
+        <!--Header-->
+        <nav class="sticky-top navbar navbar-light bg-light">
+            <a class="navbar-brand" href="../">
+                <img src="https://cdn.glitch.com/528c9c1f-260b-46e2-a036-07e36bb9c093%2Flogo.png?v=1601057973093"
+                    width="150" height="80" alt="">
+            </a>
+        </nav>
 
-    <!--button bar-->
-    <div id="wrap">
-        <div class="cp_navi">
-            <ul>
-                <li><a href="../">ライブ配信</a></li>
-                <li><a href="../live-q/">クエスト投稿</a></li>
-            </ul>
+        <!--Live ifraem-->
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://capset.hacklife.work"></iframe>
+        </div>
+
+        <!--ManuBar-->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true">概要</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false">チャット</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <br>
+                <h4>ライブ配信します。</h4><br><p>ライブ配信プラットフォーム CAPSET<br>さあ、世界に混じろう。</p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br><iframe src="/chat" width="100%" height="500px"></iframe>
+            </div>
         </div>
     </div>
-
-    <!--live streaming-->
-    <div id="wrap">
-        <iframe src="https://capset.hacklife.work"></iframe>
-    </div>
-
-    <!--live title-->
-    <div id="wrap">
-        <h2>デバッグさえも許されない休日。</h2>
-        <h4>Yutolab1120: ボッチでコソコソしてる学生エンジニア(?)の末路です。</h4>
-    </div>
-
-
-
-
 </body>
 
 </html>
