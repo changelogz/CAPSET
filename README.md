@@ -1,4 +1,5 @@
-# CAPSET
+# CAPSET Platform
+
 Live Streaming Pratform 「CAPSET」
 
 <h3>Program Language</h3>
