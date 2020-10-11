@@ -12,7 +12,7 @@ Live Streaming Pratform 「CAPSET」
 <h3>Hosting</h3>
 <ul>
   <li>Google Cloud</li>
-  <li>Glitch (FreePlan)</li>
+  <li>Heroku</li>
 </ul>
 
 <h3>Domain</h3>
