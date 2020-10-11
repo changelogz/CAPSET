@@ -1,20 +1,21 @@
-{
-  "name": "chat-app",
+    {
+  "name": "subtitles-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js",
+    "pre-deploy": "node deleteLastDeploy.js",
+    "deploy": "npm run pre-deploy && now --public && now alias",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  "engines": {
+    "node": ">=6.9"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0",
-    "socketio": "^1.0.0"
-  },
-  "devDependencies": {
-    "forever": "^3.0.2"
+    //list of dependencies
   }
 }
