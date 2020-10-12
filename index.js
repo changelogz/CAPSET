@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 7000;
 
 // express()
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/home.html');
+    res.sendFile(__dirname + 'home/index.html');
 });
 
 app.get('/chat', function (req, res) {
