@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 7000;
 
 // express()
 app.get('/quest', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/quest.html');
 });
 
 // socket.io (1) QuestTitle
