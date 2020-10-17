@@ -6,14 +6,14 @@
     <title>Quest-app</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="app.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
     <!--クエスト投稿用のinputタグ-->
     <form id="message_form" action="#">
-        クエスト内容: <input id="input_msg" autocomplete="off" /><br>
-        クエスト詳細: <input id="input_msg_1" autocomplete="off" /><br><br><button>クエストを送信</button>
+        クエスト内容: <input id="input_msg_1" autocomplete="off" /><br>
+        クエスト詳細: <input id="input_msg_2" autocomplete="off" /><br><br><button>クエストを送信</button>
     </form>
     <!--投稿されたクエスト-->
     <ul id="messages">
@@ -29,24 +29,24 @@
         $(function () {
             // 1
             $('#message_form').submit(function () {
-                socketio.emit('message', $('#input_msg').val());
-                $('#input_msg').val('');
-                return false;
-            });
-            //2
-            $('#message_form').submit(function () {
                 socketio.emit('message_1', $('#input_msg_1').val());
                 $('#input_msg_1').val('');
                 return false;
             });
+            //2
+            $('#message_form').submit(function () {
+                socketio.emit('message_2', $('#input_msg_2').val());
+                $('#input_msg_2').val('');
+                return false;
+            });
 
             //1
-            socketio.on('message', function (msg) {
-                $('#messages').append($('<p>').text(msg));
-            });
-            //2
             socketio.on('message_1', function (msg_1) {
                 $('#messages_1').append($('<p>').text(msg_1));
+            });
+            //2
+            socketio.on('message_2', function (msg_2) {
+                $('#messages_2').append($('<p>').text(msg_2));
             });
         });
 
