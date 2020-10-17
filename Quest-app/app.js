@@ -5,7 +5,7 @@ const io = require('socket.io')(http);
 const PORT = process.env.PORT || 7000;
 
 // express()
-app.get('/', function (req, res) {
+app.get('/quest', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
