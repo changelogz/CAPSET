@@ -10,7 +10,7 @@
     <style>
         #input_msg_1,
         #input_msg_2 {
-            width: 500px;
+            width: 99%;
             height: 40px;
             border-radius: 5px;
             border: 2px solid #ddd;
@@ -24,7 +24,7 @@
         }
 
         button {
-            width: 500px;
+            width: 99%;
             height: 40px;
             background: #00e7bd;
             color: rgb(255, 255, 255);
@@ -46,25 +46,23 @@
         概要<br><input id="input_msg_2" autocomplete="off" placeholder="例: 最初は木だよね！" /><br><br><button>クエストを投稿する</button>
     </form>
     <!--投稿されたクエスト-->
+
+    <h4>タイトル</h4>
     <ul id="messages_1">
-        <h4>タイトル</h4>
     </ul>
+
+    <h4>概要</h4>
     <ul id="messages_2">
-        <h4>概要</h4>
     </ul>
 
     <!--受け取り/送信の処理-->
     <script>
         var socketio = io();
         $(function () {
-            // 1
+            // 1, 2
             $('#message_form').submit(function () {
                 socketio.emit('message_1', $('#input_msg_1').val());
                 $('#input_msg_1').val('');
-                return false;
-            });
-            //2
-            $('#message_form').submit(function () {
                 socketio.emit('message_2', $('#input_msg_2').val());
                 $('#input_msg_2').val('');
                 return false;

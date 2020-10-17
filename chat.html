@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
-  
+
     <title>socket.io chat-app</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
@@ -15,15 +15,17 @@
     <meta name="twitter:description" content="互いに「楽しい」を提供するプラットフォーム">
     <meta name="twitter:title" content="CAPSET">
     <meta name="twitter:url" content="https://capset.herokuapp.com/front">
-    <meta name="twitter:image" content="https://cdn.glitch.com/a5a9129c-1c40-4799-a051-220d51deff00%2Fogp.png?v=1602515779148">
+    <meta name="twitter:image"
+        content="https://cdn.glitch.com/a5a9129c-1c40-4799-a051-220d51deff00%2Fogp.png?v=1602515779148">
 
     <meta name="twitter:card" content="summary_large_image">
 
     <style>
-      body{
-        background: #fff;
-        font-family: 'Noto Sans JP', sans-serif;
-      }
+        body {
+            background: rgb(255, 255, 255);
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
         #input_msg {
             width: 80%;
             height: 50px;
@@ -35,10 +37,10 @@
         }
 
         button {
-            width: 18%;
+            width: 15%;
             height: 56px;
             border: none;
-            background: rgb(1, 225, 255);
+            background: rgb(69, 176, 226);
             color: #fff;
             border: none;
             z-index: 10;
@@ -51,19 +53,63 @@
             bottom: 0;
             width: 100%;
             height: 50px;
-            border:none;
+            z-index: 4;
         }
-      li {
-        font-size: 20px;
-      }
+
+        li {
+            font-size: 20px;
+        }
+
+        ul,
+        ol {
+            padding: 0;
+
+        }
+
+        ul li {
+            position: relative;
+            list-style-type: none !important;
+            /*ポチ消す*/
+            padding: 0.5em 0.5em 0.5em 0.5em;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            background: #f3f3f3;
+            vertical-align: middle;
+            color: #505050;
+            border-radius: 15px 0px 0px 15px;
+            /*左側の角丸く*/
+        }
+
+        ul li:before {
+            display: inline-block;
+            vertical-align: middle;
+            /*以下白丸つくる*/
+            content: '';
+            width: 1em;
+            height: 1em;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        #massage {
+            z-index: 3;
+        }
+
+        #box-tolk {
+            width: 50px;
+            height: 98%;
+            z-index: 3;
+        }
     </style>
 </head>
 
 <body>
     <!--チャット投稿用のinputタグ-->
     <form id="message_form" action="#">
-        <input id="input_msg" autocomplete="off" placeholder="メッセージを送ろう！" /><button>送信</button>
+        <input id="input_msg" autocomplete="off" placeholder="メッセージを送ろう！" />&nbsp;<button>送信</button>
     </form>
+
     <!--投稿されたメッセージ-->
     <ul id="messages"></ul>
 
@@ -81,7 +127,6 @@
             });
         });
     </script>
-
 
 </body>
 
