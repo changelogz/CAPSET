@@ -1,0 +1,20 @@
+{
+    "lang": "ja",
+    "name": "CAPSET",
+    "short_name": "CAPSET",
+    "start_url": "https://capset.glitch.me/front",
+    "display": "fullscreen",
+    "theme_color": "00b9ff",
+    "icons": [
+        {
+            "src": "/assets/images/apple-touch-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
