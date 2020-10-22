@@ -1,3 +1,4 @@
+
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
@@ -18,6 +19,11 @@ app.get('/chat', function (req, res) {
 app.get('/quest', function (req, res) {
     res.sendFile(__dirname + '/quest.html');
 });
+
+app.get('/server', function (req, res){
+    res.sendFile(__dirname + '/server.html');
+});
+
 
 app.get('/front', function (req, res) {
     res.sendFile(__dirname + '/index.html');
